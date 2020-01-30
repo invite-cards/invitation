@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2020 at 10:13 AM
+-- Generation Time: Jan 30, 2020 at 10:52 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -80,6 +80,74 @@ INSERT INTO `category` (`id`, `title`, `status`, `date`, `createdBy`, `uniq`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(250) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `pr_id` varchar(250) DEFAULT NULL,
+  `sku` varchar(250) DEFAULT NULL,
+  `category` int(250) NOT NULL,
+  `sub_category` int(250) DEFAULT NULL,
+  `is_stock` int(250) NOT NULL DEFAULT 1 COMMENT '1=yes,2=no',
+  `mrp` int(250) DEFAULT NULL,
+  `selling_price` int(250) DEFAULT NULL,
+  `discount` int(250) DEFAULT NULL COMMENT 'discount in percentage',
+  `featured_image` varchar(250) DEFAULT NULL,
+  `description` varchar(2000) DEFAULT NULL,
+  `uniq` varchar(250) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_date` datetime NOT NULL,
+  `weight` varchar(250) DEFAULT NULL,
+  `dimensions` varchar(250) DEFAULT NULL,
+  `no_of_insert` varchar(250) DEFAULT NULL,
+  `material` varchar(250) DEFAULT NULL,
+  `type` varchar(250) DEFAULT NULL,
+  `ceremony` varchar(250) DEFAULT NULL,
+  `orientation` varchar(250) DEFAULT NULL,
+  `print_option` varchar(250) DEFAULT NULL,
+  `size` varchar(250) DEFAULT NULL,
+  `gsm` varchar(250) DEFAULT NULL,
+  `color` varchar(250) DEFAULT NULL,
+  `theme` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `pr_id`, `sku`, `category`, `sub_category`, `is_stock`, `mrp`, `selling_price`, `discount`, `featured_image`, `description`, `uniq`, `status`, `date`, `update_date`, `weight`, `dimensions`, `no_of_insert`, `material`, `type`, `ceremony`, `orientation`, `print_option`, `size`, `gsm`, `color`, `theme`) VALUES
+(1, 'product', 'product', 'product', 1, 1, 1, 10203, 100, 20, 'featured-img/369f61778274ee8575a8ba5f0774cfad.png', '<p>SDDADDADD</p>\r\n', 'JgMBayUeXW', 0, '2020-01-30 19:29:02', '2020-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'product', 'PR', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/5c36898427d9251ece9f3e1a486d67c0.png', '<p>cszxczx</p>\r\n', 'ZVxkmb8w4E', 0, '2020-01-30 19:32:54', '2020-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'product3', 'PR20200131010843', 'product3', 3, 0, 2, 10203, 100, 20, 'featured-img/52ddf246db250380b6f29c9236f97a00.png', '<p>sdfsdfsdfsdf</p>', '3bIBxiCkp2', 0, '2020-01-30 19:38:43', '2020-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'product3', 'PR20200131030218', 'product3', 3, 0, 2, 10203, 100, 20, NULL, '<p>sdfsdfsdfsdf</p>', 'DFHsxNpLle', 0, '2020-01-30 21:32:18', '2020-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, 'product3', 'PR20200131030224', 'product3', 4, 0, 2, 10203, 100, 20, NULL, '<p>sdfsdfsdfsdf</p>', 'W04eiEDfsw', 0, '2020-01-30 21:32:24', '2020-01-31 00:00:00', 'test', 'test', '13', '123456', 'sdfsad', 'sdfsd', 'sfsdf', 'sdfsdf', 'sdsdf', 'sfdsf', 'sdfsdf', 'sdfsdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_imgs`
+--
+
+CREATE TABLE `product_imgs` (
+  `id` int(250) NOT NULL,
+  `prod_id` int(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `uniq` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product_imgs`
+--
+
+INSERT INTO `product_imgs` (`id`, `prod_id`, `image`, `uniq`) VALUES
+(1, 5, 'product-images/09147d26590c86c7243a26b6d3189303.png', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sub_category`
 --
 
@@ -117,6 +185,18 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_imgs`
+--
+ALTER TABLE `product_imgs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sub_category`
 --
 ALTER TABLE `sub_category`
@@ -137,6 +217,18 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `category`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `product_imgs`
+--
+ALTER TABLE `product_imgs`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sub_category`
