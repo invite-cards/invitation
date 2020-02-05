@@ -36,4 +36,9 @@ $route['category/sub-category-add']   	= 'category/sub_category_add';
 $route['category/sub-category-edit']   	= 'category/sub_category_edit'; 
 $route['category/sub-category-delete/(:any)']   	= 'category/sub_category_edit/$1'; 
 
+//banner
+$route['banner/manage']   		= 'banner/index'; 	
+$route['banner/add']   			= 'banner/add'; 	
+$route['banner/insert']   		= 'banner/insert';
+
 
