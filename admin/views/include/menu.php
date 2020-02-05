@@ -9,6 +9,7 @@
               <li class="<?php echo $this->uri->segment(2) == 'sub-category'?'active':'' ?>"><a href="<?php echo base_url('category/sub-category') ?>">Sub Catgory</a></li>
             </ul>
       </li>
+      <li class="<?php echo $this->uri->segment(1) == 'product'?'active':''?>"> <a href="<?php echo base_url('product/manage') ?>"> <i class="fas fa-id-card-alt li-icon"></i>Products</a></li>
 </ul>
 </div>
 </div>

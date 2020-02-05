@@ -34,7 +34,13 @@ $route['category/delete/(:any)'] = 'category/delete/$1';
 $route['category/sub-category']   		= 'category/sub_category'; 
 $route['category/sub-category-add']   	= 'category/sub_category_add'; 
 $route['category/sub-category-edit']   	= 'category/sub_category_edit'; 
-$route['category/sub-category-delete/(:any)']   	= 'category/sub_category_edit/$1'; 
+$route['category/sub-category-delete/(:any)']	= 'category/sub_category_edit/$1'; 
+
+// products
+$route['product/manage']   		= 'product/index';
+$route['product/insert']   		= 'product/insert';
+$route['product/edit/(:any)']   = 'product/edit/$1';
+
 
 //banner
 $route['banner/manage']   		= 'banner/index'; 	
