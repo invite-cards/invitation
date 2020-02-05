@@ -40,7 +40,7 @@ $route['category/sub-category-delete/(:any)']	= 'category/sub_category_edit/$1';
 $route['product/manage']   		= 'product/index';
 $route['product/insert']   		= 'product/insert';
 $route['product/edit/(:any)']   = 'product/edit/$1';
-
+$route['product/delete/(:any)']   = 'product/delete/$1';
 
 //banner
 $route['banner/manage']   		= 'banner/index'; 	

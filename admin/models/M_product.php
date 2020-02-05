@@ -60,6 +60,29 @@ class M_product extends CI_Model {
 			$this->db->insert('product_imgs',$insert);
 			return $this->db->insert_id();
 		}
+	}
+	
+	public function getproducts($var = null)
+	{			
+		$this->db->select('pr.id,pr.name, pr.pr_id, pr.sku,cat.title as category,pr.mrp,pr.selling_price,pr.featured_image');		
+		$this->db->from('product pr');		
+		$this->db->join('category cat', 'cat.id = pr.category', 'left');
+		return $this->db->get()->result();		
+	}
+
+	public function delete($id = null)
+    {
+        $this->db->where('id', $id);
+        $this->db->select('featured_image');
+        $query = $this->db->get('product')->row();
+        if (!empty($query)) {
+            $this->db->where('id', $id);
+            $this->db->delete('product');
+            unlink('../'.$query->featured_image);
+            return true;            
+        }else{
+            return false;
+        }
     }
 
 

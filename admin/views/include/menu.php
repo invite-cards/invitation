@@ -10,6 +10,7 @@
             </ul>
       </li>
       <li class="<?php echo $this->uri->segment(1) == 'product'?'active':''?>"> <a href="<?php echo base_url('product/manage') ?>"> <i class="fas fa-id-card-alt li-icon"></i>Products</a></li>
+      <li class="<?php echo $this->uri->segment(1) == 'banner'?'active':''?>"> <a href="<?php echo base_url('banner/manage') ?>"> <i class="fas fa-image li-icon"></i>Banner</a></li>
 </ul>
 </div>
 </div>

@@ -7,14 +7,14 @@ class Banner extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('ra_id') == '') {$this->session->set_flashdata('error', 'Please try again'); redirect('login'); }
+        if ($this->session->userdata('inv_id') == '') { $this->session->set_flashdata('error', 'Please try again'); redirect('login'); }
         $this->load->model('m_banner');
     }
 
     //manage banner
     public function index($id = null)
     {
-        $data['title']  = 'Banner - Raja housing';
+        $data['title']  = 'Banner - Invitation';
         $data['result'] = $this->m_banner->bannerGet(); 
         $this->load->view('banner/manage-banner', $data);  
     }
@@ -22,7 +22,7 @@ class Banner extends CI_Controller {
     //add banner
     public function add($var = null)
     {
-        $data['title']  = 'Banner - Raja housing';
+        $data['title']  = 'Banner - Invitation';
         $this->load->view('banner/add-banner', $data, FALSE);
         
     }
@@ -31,8 +31,6 @@ class Banner extends CI_Controller {
     public function insert($var = null)
     {
         $banner_id  = $this->input->post('banner_id');
-        $alt      = $this->input->post('alt');
-        $subtitle      = $this->input->post('subtitle');
         $link      = $this->input->post('link');
 
         $this->load->library('upload');
@@ -62,9 +60,7 @@ class Banner extends CI_Controller {
 
         $insert = array(
 			'uniq' 		=>	$banner_id,
-			'alt'		=>  $alt, 
             'status'    =>  '1',
-            'subtitle'    =>  $subtitle,
             'link'    =>  $link,
             );
 
@@ -97,7 +93,7 @@ class Banner extends CI_Controller {
     public function edit($id = '')
     {
         $data['result'] = $this->m_banner->edit($id);
-        $data['title']  = 'Banner - Raja housing';
+        $data['title']  = 'Banner - Invitation';
         $this->load->view('banner/edit-banner', $data);         
     }
 
@@ -105,7 +101,7 @@ class Banner extends CI_Controller {
     // enquiry
     public function enquiry($id='')
     {
-        $data['title']  = 'Enquiry - Raja housing';
+        $data['title']  = 'Enquiry - Invitation';
         if(!empty($id)){
             $data['result'] = $this->m_banner->enquiry($id);
             $this->load->view('other/enquiry-detail', $data); 
@@ -117,7 +113,7 @@ class Banner extends CI_Controller {
 
     public function referral($id='')
     {
-        $data['title']  = 'Referrals - Raja housing';
+        $data['title']  = 'Referrals - Invitation';
         if(!empty($id)){
             $data['result'] = $this->m_banner->referral($id);
             $this->load->view('other/referral-detail', $data); 

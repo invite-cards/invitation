@@ -63,34 +63,37 @@
                                     <thead>
                                        <tr class="tt">
                                           <th id="a" class="h5-para-p2" width="130px">Products</th>
-                                          <th id="b" class="h5-para-p2" width="100px">Image</th>
-                                          <th id="c" class="h5-para-p2" width="120px">Icon</th>
+                                          <th id="b" class="h5-para-p2" width="100px">Product Id</th>
+                                          <th id="b" class="h5-para-p2" width="100px">Category</th>
+                                          <th id="c" class="h5-para-p2" width="120px">SKU</th>
+                                          <th id="c" class="h5-para-p2" width="120px">MRP Price</th>
+                                          <th id="c" class="h5-para-p2" width="120px">Selling Price</th>
+                                          <th id="c" class="h5-para-p2" width="120px">Image</th>
                                           <th id="g" class="h5-para-p2" width="62px">Action</th>
                                        </tr>
                                     </thead>
                                     <tbody>
-
                                     <?php
-
                                     if (!empty($result)) {
                                       foreach ($result as $key => $value) {
                                       ?>
                                       <tr>
-                                            <td ><?php echo (!empty($value->city))?$value->city:'---'  ?></td>
-
-                                            <td ><img class="table-image" src="<?php echo $this->config->item('web_url').$value->image; ?>" alt="image"></td>
-                                            <td ><img class="table-image" src="<?php echo $this->config->item('web_url').$value->icon; ?>" alt="image"></td>
+                                            <td><?php echo (!empty($value->name))?$value->name:''; ?></td>
+                                            <td><?php echo (!empty($value->pr_id))?$value->pr_id:''; ?></td>
+                                            <td><?php echo (!empty($value->category))?$value->category:''; ?></td>
+                                            <td><?php echo (!empty($value->sku))?$value->sku:''; ?></td>
+                                            <td><?php echo (!empty($value->mrp))?$value->mrp:''; ?></td>
+                                            <td><?php echo (!empty($value->selling_price))?$value->selling_price:''; ?></td>
+                                            <td ><img class="table-image" src="<?php echo $this->config->item('web_url').$value->featured_image; ?>" alt="image"></td>
                                             <td class="action-btn  center-align">
                                               <!-- view user -->
-                                                <a href="<?php echo base_url('Products/edit/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
+                                                <a href="<?php echo base_url('product/edit/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
                                               <!-- view user -->
                                               <!-- delete user -->
-                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('Products/delete/'.$value->id.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
+                                                <a onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url('product/delete/'.$value->id.'') ?> " class="red hoverable delete-btn"><i class="fas fa-trash  "></i></a>
                                                 <!-- delete user -->
-                                            </td>
-                                          
-                                        </tr>
-                                      
+                                            </td>                                          
+                                        </tr>                                      
                                     <?php } } ?>
                                     </tbody>
                                  </table>

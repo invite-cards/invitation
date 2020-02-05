@@ -39,22 +39,6 @@
                                 <div class="card-content">
                                     <div class="form-container">
                                         <form action="<?php echo base_url() ?>banner/insert" method="post" style="overflow-y: auto;overflow-x: hidden;" id="city-form" enctype="multipart/form-data">
-                                        
-                                          <div class="row m0">
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="alt" name="alt" class="validate" required >
-                                                  <label for="alt">Title<span class="red-text">*</span></label>
-                                                  <p><span class="error"><?php echo form_error('alt'); ?></span></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row m0">
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="subtitle" name="subtitle" class="validate" required >
-                                                  <label for="subtitle">Subtitle<span class="red-text">*</span></label>
-                                                  <p><span class="error"><?php echo form_error('subtitle'); ?></span></p>
-                                                </div>
-                                            </div>
                                             <div class="row m0">
                                                 <div class="input-field col s12 l6">
                                                   <input type="text" id="link" name="link" class="validate" required >
@@ -62,14 +46,7 @@
                                                   <p><span class="error"><?php echo form_error('link'); ?></span></p>
                                                 </div>
                                             </div>
-                                          
-                                          
-                                             
-
-                                            <div class="row m0">
-
-                                            
-
+                                            <div class="row m0">                                          
                                                   <div class="file-field input-field col s12 l6">
                                                     <div class="btn btn-small black-text grey lighten-3">
                                                     <i class="far fa-image left  "></i>
@@ -82,9 +59,6 @@
                                                     <h6 class=" m0"><small> <i><b>Note</b>: Please select only image file (eg: .jpg, .png, .jpeg etc.) <br> <span class="bold">Max file size:</span> 512kb  </i> <span class="red-text">*</span></small></h6>
                                                 </div>
                                             </div>
-
-                                            
-
                                               <div class="col s12">
                                               <?php 
                                                    echo ($this->session->flashdata('formerror'))? '<span class="red-text">'.$this->session->flashdata('formerror').'</span>' : '' 

@@ -39,22 +39,6 @@
                                 <div class="card-content">
                                     <div class="form-container">
                                         <form action="<?php echo base_url() ?>banner/insert" method="post" style="overflow-y: auto;overflow-x: hidden;" id="city-form" enctype="multipart/form-data">
-                                        
-                                          <div class="row m0">
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="alt" name="alt" class="validate" required value="<?php echo (!empty($result->alt)?$result->alt:'') ?>">
-                                                  <label for="alt">Title<span class="red-text">*</span></label>
-                                                  <p><span class="error"><?php echo form_error('alt'); ?></span></p>
-                                                </div>
-                                            </div>
-
-                                            <div class="row m0">
-                                                <div class="input-field col s12 l6">
-                                                  <input type="text" id="subtitle" name="subtitle" class="validate" required value="<?php echo (!empty($result->subtitle)?$result->subtitle:'') ?>">
-                                                  <label for="subtitle">Subtitle<span class="red-text">*</span></label>
-                                                  <p><span class="error"><?php echo form_error('subtitle'); ?></span></p>
-                                                </div>
-                                            </div>
                                             <div class="row m0">
                                                 <div class="input-field col s12 l6">
                                                   <input type="text" id="link" name="link" class="validate" required value="<?php echo (!empty($result->link)?$result->link:'') ?>">
@@ -62,14 +46,7 @@
                                                   <p><span class="error"><?php echo form_error('link'); ?></span></p>
                                                 </div>
                                             </div>
-                                          
-                                          
-                                             
-
                                             <div class="row m0">
-
-                                            
-
                                                   <div class="file-field input-field col s12 l6">
                                                     <div class="btn btn-small black-text grey lighten-3">
                                                     <i class="far fa-image left  "></i>
@@ -108,7 +85,7 @@
                                               <?php ?>
                                               </div>
 
-                                              <input type="hidden" name="banner_id" value="<?php echo (!empty($result->uniq))?$result->uniq:random_string('alnum',10) ?>">
+                                              <input type="hidden" name="banner_id" value="<?php echo (!empty($result->id))?$result->id:random_string('alnum',10) ?>">
                                               <input name="image" class="ipimg" type="hidden" value="">
 
                                             

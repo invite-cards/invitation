@@ -22,6 +22,7 @@ class Product extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Product';
+		$data['result'] = $this->m_product->getproducts();
 		$this->load->view('product/list', $data, FALSE);
 	}
 
@@ -213,6 +214,17 @@ class Product extends CI_Controller {
 	        }
 	    }
 	}
+
+    public function delete($id = null)
+    {
+        if($this->m_product->delete($id)){
+			$this->session->set_flashdata('success', 'Product deleted Successfully');
+			redirect('product/manage','refresh');
+       }else{
+			$this->session->set_flashdata('error', 'Some error occured please try again');
+			redirect('product/manage','refresh');
+       }
+    }
 
 }
 

@@ -65,8 +65,6 @@
                                           <th id="a" class="h5-para-p2" width="130px">Sl No.</th>
                                           <th id="b" class="h5-para-p2" width="100px">Image</th>
                                           <th id="b" class="h5-para-p2" width="100px">Link</th>
-                                          <th id="c" class="h5-para-p2" width="120px">Title</th>
-                                          <th id="c" class="h5-para-p2" width="120px">SubTitle</th>
                                           <th id="g" class="h5-para-p2" width="62px">Action</th>
                                        </tr>
                                     </thead>
@@ -78,10 +76,6 @@
 
                                             <td ><img class="table-image" src="<?php echo $this->config->item('web_url').$value->image; ?>" alt="image"></td>
                                             <td ><?php echo (!empty($value->link))?$value->link:'---'  ?></td>
-                                            <td ><?php echo (!empty($value->alt))?$value->alt:'---'  ?></td>
-                                            <td ><?php echo (!empty($value->subtitle))?$value->subtitle:'---'  ?></td>
-
-                                            
                                             <td class="action-btn  center-align">
                                               <!-- view user -->
                                                 <a href="<?php echo base_url('banner/edit/'.$value->id.'') ?>"  class="blue hoverable"><i class="fas fa-edit "></i></i></a>
