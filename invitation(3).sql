@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 07:00 PM
+-- Generation Time: Feb 11, 2020 at 09:44 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -99,7 +99,7 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `title`, `status`, `date`, `createdBy`, `uniq`) VALUES
 (1, '112333', 1, '2020-01-23 21:09:14', 1, 'mF7Nqr0nGK'),
 (3, 'cqwe', 1, '2020-01-23 21:09:48', 1, 'jfyJrRQ0El'),
-(4, 'fasdfads', 1, '2020-01-23 21:13:01', 1, NULL);
+(4, 'fasdfads', 1, '2020-01-23 21:13:01', 1, 'asdafasfasf');
 
 -- --------------------------------------------------------
 
@@ -135,17 +135,18 @@ CREATE TABLE `product` (
   `size` varchar(250) DEFAULT NULL,
   `gsm` varchar(250) DEFAULT NULL,
   `color` varchar(250) DEFAULT NULL,
-  `theme` varchar(250) DEFAULT NULL
+  `theme` varchar(250) DEFAULT NULL,
+  `pr_type` int(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `pr_id`, `sku`, `category`, `sub_category`, `is_stock`, `mrp`, `selling_price`, `discount`, `featured_image`, `description`, `uniq`, `status`, `date`, `update_date`, `weight`, `dimensions`, `no_of_insert`, `material`, `type`, `ceremony`, `orientation`, `print_option`, `size`, `gsm`, `color`, `theme`) VALUES
-(3, 'product3', 'PR20200131010843', 'product3', 3, 0, 2, 10203, 100, 20, 'featured-img/52ddf246db250380b6f29c9236f97a00.png', '<p>sdfsdfsdfsdf</p>', '3bIBxiCkp2', 0, '2020-01-30 19:38:43', '2020-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'product', 'PR20200205232430', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/17866e4e0e13ebe4e268a21d3983f015.jpg', '<p>saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf</p>', 'e0X2YipAxQ', 0, '2020-02-05 17:54:30', '2020-02-05 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'productfadsdf', 'PR20200205232952', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/f74ae02f9b74b6b53b36ef1d38c70251.jpg', '<p>csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd</p>', '9OyvmFNSpe', 0, '2020-02-05 17:59:52', '2020-02-05 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `product` (`id`, `name`, `pr_id`, `sku`, `category`, `sub_category`, `is_stock`, `mrp`, `selling_price`, `discount`, `featured_image`, `description`, `uniq`, `status`, `date`, `update_date`, `weight`, `dimensions`, `no_of_insert`, `material`, `type`, `ceremony`, `orientation`, `print_option`, `size`, `gsm`, `color`, `theme`, `pr_type`) VALUES
+(3, 'product3', 'PR20200131010843', 'product3', 3, 0, 2, 10203, 100, 20, 'featured-img/52ddf246db250380b6f29c9236f97a00.png', '<p>sdfsdfsdfsdf</p>', '3bIBxiCkp2', 0, '2020-01-30 19:38:43', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
+(6, 'product', 'PR20200205232430', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/17866e4e0e13ebe4e268a21d3983f015.jpg', '<p>saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf</p>', 'e0X2YipAxQ', 0, '2020-02-05 17:54:30', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
+(7, 'productfadsdf', 'PR20200205232952', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/f74ae02f9b74b6b53b36ef1d38c70251.jpg', '<p>csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd</p>', '9OyvmFNSpe', 0, '2020-02-05 17:59:52', '2020-02-12 00:00:00', 'test', 'test', '13', '123456', 'sdfsad', 'sdfsd', 'sfsdf', 'sdfsdf', 'sdsdf', 'sfdsf', 'sdfsdf', 'sdfsdf', 2);
 
 -- --------------------------------------------------------
 
@@ -157,6 +158,7 @@ CREATE TABLE `product_imgs` (
   `id` int(250) NOT NULL,
   `prod_id` int(250) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
+  `thumb` varchar(250) DEFAULT NULL,
   `uniq` int(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -164,8 +166,8 @@ CREATE TABLE `product_imgs` (
 -- Dumping data for table `product_imgs`
 --
 
-INSERT INTO `product_imgs` (`id`, `prod_id`, `image`, `uniq`) VALUES
-(1, 5, 'product-images/09147d26590c86c7243a26b6d3189303.png', 0);
+INSERT INTO `product_imgs` (`id`, `prod_id`, `image`, `thumb`, `uniq`) VALUES
+(1, 5, 'product-images/09147d26590c86c7243a26b6d3189303.png', NULL, 0);
 
 -- --------------------------------------------------------
 

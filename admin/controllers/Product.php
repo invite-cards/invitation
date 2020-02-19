@@ -96,8 +96,27 @@ class Product extends CI_Controller {
             } else {
                 $upload_data = $this->upload->data();
                 $file_name = $upload_data['file_name'];
+
+                $config1['img_library'] = 'gd2';
+		        $config1['source_image'] = $upload_data['full_path'];
+		        $config1['create_thumb'] = true;
+		        $config1['maintain_ratio'] = false;
+		        $config1['height'] = 120;
+		        $config1['width'] = 120;
+		        $this->load->library('image_lib', $config1);
+		        $this->image_lib->resize();
+		        $file_name  = $upload_data['file_name'];
+
+		        $file_tumb      = $upload_data['raw_name'];
+		        $file_tumb_ex   = $upload_data['file_ext'];
+		        $thumfile       = $file_tumb.'_thumb'.$file_tumb_ex;
+
                 $imgpath = 'featured-img/'.$file_name;
-                if($imgpath){$insert['featured_image'] = $imgpath; } }
+                if($imgpath){
+                	$insert['featured_image'] = $imgpath; 
+		        	$insert['thumb'] = $thumfile;
+                } 
+            }
         }
         $output = $this->m_product->insert_product($insert);
         if(!empty($output))
@@ -145,7 +164,8 @@ class Product extends CI_Controller {
 			'color' 			=> $this->input->post('color'), 
 			'size' 				=> $this->input->post('size'), 
 			'theme' 			=> $this->input->post('theme'), 
-			'update_date' 			=> date('Y-m-d'), 
+			'update_date' 		=> date('Y-m-d'),
+			'pr_type'			=> $this->input->post('pr_type'), 
 		);
 
         $output = $this->m_product->other($insert,$id);
