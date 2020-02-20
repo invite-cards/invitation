@@ -52,8 +52,10 @@ class Banner extends CI_Controller {
         redirect('banner/manage','refresh');
         } else {
         $upload_data = $this->upload->data();
+
         $file_name  = $upload_data['file_name'];
-        $banner    = 'banner/'.$file_name;
+
+        $banner         = 'banner/'.$file_name;
         }
         }
         
@@ -66,6 +68,7 @@ class Banner extends CI_Controller {
 
         if (file_exists($_FILES['banner']['tmp_name'])) {
             $insert['image'] = $banner;
+            
         }
        
         $result = $this->m_banner->insert($insert);
