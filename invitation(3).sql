@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2020 at 09:44 PM
+-- Generation Time: Feb 20, 2020 at 04:32 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -144,9 +144,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `pr_id`, `sku`, `category`, `sub_category`, `is_stock`, `mrp`, `selling_price`, `discount`, `featured_image`, `description`, `uniq`, `status`, `date`, `update_date`, `weight`, `dimensions`, `no_of_insert`, `material`, `type`, `ceremony`, `orientation`, `print_option`, `size`, `gsm`, `color`, `theme`, `pr_type`) VALUES
-(3, 'product3', 'PR20200131010843', 'product3', 3, 0, 2, 10203, 100, 20, 'featured-img/52ddf246db250380b6f29c9236f97a00.png', '<p>sdfsdfsdfsdf</p>', '3bIBxiCkp2', 0, '2020-01-30 19:38:43', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
-(6, 'product', 'PR20200205232430', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/17866e4e0e13ebe4e268a21d3983f015.jpg', '<p>saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf</p>', 'e0X2YipAxQ', 0, '2020-02-05 17:54:30', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
-(7, 'productfadsdf', 'PR20200205232952', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/f74ae02f9b74b6b53b36ef1d38c70251.jpg', '<p>csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd</p>', '9OyvmFNSpe', 0, '2020-02-05 17:59:52', '2020-02-12 00:00:00', 'test', 'test', '13', '123456', 'sdfsad', 'sdfsd', 'sfsdf', 'sdfsdf', 'sdsdf', 'sfdsf', 'sdfsdf', 'sdfsdf', 2);
+(3, 'product3', 'PR20200131010843', 'product3', 3, 0, 2, 10203, 100, 20, 'featured-img/5c36898427d9251ece9f3e1a486d67c0.png', '<p>sdfsdfsdfsdf</p>', '3bIBxiCkp2', 0, '2020-01-30 19:38:43', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
+(6, 'product', 'PR20200205232430', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/5c36898427d9251ece9f3e1a486d67c0.png', '<p>saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf saad afasfaf</p>', 'e0X2YipAxQ', 0, '2020-02-05 17:54:30', '2020-02-12 00:00:00', 'test', 'test', '', '', '', '', '', '', '', '', '', '', 1),
+(7, 'productfadsdf', 'PR20200205232952', 'product', 4, 0, 1, 10203, 100, 20, 'featured-img/5c36898427d9251ece9f3e1a486d67c0.png', '<p>csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd csdfsdsd</p>', '9OyvmFNSpe', 0, '2020-02-05 17:59:52', '2020-02-12 00:00:00', 'test', 'test', '13', '123456', 'sdfsad', 'sdfsd', 'sfsdf', 'sdfsdf', 'sdsdf', 'sfdsf', 'sdfsdf', 'sdfsdf', 2);
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ CREATE TABLE `product_imgs` (
 --
 
 INSERT INTO `product_imgs` (`id`, `prod_id`, `image`, `thumb`, `uniq`) VALUES
-(1, 5, 'product-images/09147d26590c86c7243a26b6d3189303.png', NULL, 0);
+(1, 3, 'product-images/09147d26590c86c7243a26b6d3189303.png', NULL, 0);
 
 -- --------------------------------------------------------
 

@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
-
-<!-- Mirrored from grandetest.com/theme/techno-html/single-product-v4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Feb 2020 09:03:19 GMT -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-    <!-- Basic Page Needs -->
-    <meta charset="UTF-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title><?php echo $title ?></title>
-
-    <meta name="author" content="CreativeLayers">
-
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Boostrap style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/bootstrap.min.css">
-
-    <!-- Theme style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/style.css">
-
-    <!-- Reponsive -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/responsive.css">
-
-    <link rel="shortcut icon" href="favicon/favicon.png">
-     
+        <meta charset="UTF-8">
+        <title><?php echo $title ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/stylesheets/responsive.css">
 </head>
 <body class="header_sticky">
     <div class="boxed">
@@ -245,8 +226,7 @@
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/jquery.countdown.js"></script>
 
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/main.js"></script>
+        <?php $this->load->view('includes/searchq'); ?>
 
 </body> 
-
-<!-- Mirrored from grandetest.com/theme/techno-html/single-product-v4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Feb 2020 09:03:19 GMT -->
 </html>

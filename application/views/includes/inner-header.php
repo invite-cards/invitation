@@ -72,9 +72,9 @@
 
                         <div class="col-md-6">
                             <div class="top-search style1">
-                                    <form action="#" method="get" class="form-search" accept-charset="utf-8">
+                                    <form action="<?php echo base_url('search') ?>" method="get" class="form-search" accept-charset="utf-8">
                                         <div class="box-search">
-                                            <input type="text" name="search" placeholder="Search what you looking for ?">
+                                            <input type="text" name="q" autocomplete="off" placeholder="Search cards here?">
                                             <span class="btn-search">
                                                 <button type="submit"><img src="<?php echo base_url()?>assets/images/icons/search-2.png" alt=""></button>
                                             </span>
@@ -83,109 +83,12 @@
                                                     <div class="title">
                                                         Search Suggestions
                                                     </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/s05.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Razer RZ02-01071500-R3M1</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $50.00
-                                                                    </span>
-                                                                    <span class="regular">
-                                                                        $2,999.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/s06.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Notebook Black Spire V Nitro VN7-591G</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $24.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/14.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Apple iPad Mini G2356</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $90.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/02.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Razer RZ02-01071500-R3M1</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $50.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/l01.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Apple iPad Mini G2356</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $24.00
-                                                                    </span>
-                                                                    <span class="regular">
-                                                                        $2,999.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="image">
-                                                                <img src="<?php echo base_url()?>assets/images/product/other/s08.jpg" alt="">
-                                                            </div>
-                                                            <div class="info-product">
-                                                                <div class="name">
-                                                                    <a href="#" title="">Beats Snarkitecture Headphones</a>
-                                                                </div>
-                                                                <div class="price">
-                                                                    <span class="sale">
-                                                                        $90.00
-                                                                    </span>
-                                                                    <span class="regular">
-                                                                        $2,999.00
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </li>
+                                                    <ul class="search-result">
+                                                        
                                                     </ul>
                                                 </div><!-- /.box-suggestions -->
-                                            </div><!-- /.search-suggestions -->
+                                            </div>
+                                            <!-- /.search-suggestions -->
                                         </div><!-- /.box-search -->
                                     </form><!-- /.form-search -->
                             </div><!-- /.top-search -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
 		<meta charset="UTF-8">
 		<title><?php echo $title ?></title>
@@ -224,7 +224,6 @@
 		<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtRmXKclfDp20TvfQnpgXSDPjut14x5wk&amp;region=GB"></script>
 	   	<script src="<?php echo base_url()?>assets/javascript/gmap3.min.js"></script>
 	   	<script  src="<?php echo base_url()?>assets/javascript/waves.min.js"></script>
-
 		<script src="<?php echo base_url()?>assets/javascript/main.js"></script>
 
 	</body>

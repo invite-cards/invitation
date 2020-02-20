@@ -473,7 +473,7 @@ h4 {
 }
 
 .background {
-	background-color:#f5f5f5;
+	background-color:#fff;
 }
 
 /* Boxed
@@ -957,7 +957,7 @@ ul.flat-unstyled li > ul > li > a {
 	width:55%;
 	float:left;
 	background:#fff;
-	padding:20px 30px;
+	padding:20px 20px;
 }
 
 .search-suggestions .box-suggestions .title,
@@ -2246,7 +2246,7 @@ ul.menu li.column-1 .submenu > li > a i {
 }
 
 .widget-categories > ul.cat-list > li > a > span {
-	color:#bababa;
+	color:#484862;
 	font-size:12px;
 	margin-left:10px;
 }
@@ -3355,4 +3355,15 @@ ol.comment-list li.comment .comment-text .comment-content p {
 		transform:rotate(360deg);
 	}
 
+}
+
+.sg-result-list{
+	padding: 5px 15px;
+}
+
+.search-suggestions .sg-result-list:hover {
+    background-color: #cecece; 
+}
+.cart-items.no-result{
+	padding-bottom: 50px;
 }

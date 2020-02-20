@@ -77,10 +77,16 @@
 											<span class="btn-search">
 												<button type="submit"><img src="<?php echo base_url()?>assets/images/icons/search-2.png" alt=""></button>
 											</span>
-											<div class="sg-box" id="sg-box">
-												<div class="title">Search Suggestions</div>
-												<ul class="sg-result"> </ul>
-											</div>
+											<div class="search-suggestions">
+                                                <div class="box-suggestions">
+                                                    <div class="title">
+                                                        Search Suggestions
+                                                    </div>
+                                                    <ul class="search-result">
+                                                        
+                                                    </ul>
+                                                </div><!-- /.box-suggestions -->
+                                            </div>
 											<!-- /.search-suggestions -->
 										</div><!-- /.box-search -->
 									</form><!-- /.form-search -->
