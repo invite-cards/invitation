@@ -187,14 +187,15 @@
                                             </div>
                                         </div>
 
+
                                         <div class="row m0">
 
                                             <div class="input-field col s12 l6">
                                                     <select name="pr_type" required="" id="pr_type">
                                                         <option value="">Choose a Display option</option>
-                                                            <option value="1" <?php  if(!empty($value->pr_type) && $value->pr_type == 1){ echo 'selected="true"'; } ?> >Trending</option> 
-                                                            <option value="2"  <?php  if(!empty($value->pr_type) && $value->pr_type == 2){ echo 'selected="true"'; } ?>>New Design</option> 
-                                                            <option value="3"  <?php  if(!empty($value->pr_type) && $value->pr_type == 3){ echo 'selected="true"'; } ?>>Most Selling</option> 
+                                                            <option value="1" <?php  if($result->pr_type == 1){ echo 'selected'; } ?> >Trending</option> 
+                                                            <option value="2"  <?php  if($result->pr_type == 2){ echo 'selected'; } ?>>New Design</option> 
+                                                            <option value="3"  <?php  if($result->pr_type == 3){ echo 'selected'; } ?>>Most Selling</option> 
                                                     </select>
                                                     <label>Display Option</label>
                                                     <p><span class="error"><?php echo form_error('pr_type'); ?></span></p>

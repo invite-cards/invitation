@@ -85,7 +85,7 @@
                                               <?php ?>
                                               </div>
 
-                                              <input type="hidden" name="banner_id" value="<?php echo (!empty($result->id))?$result->id:random_string('alnum',10) ?>">
+                                              <input type="hidden" name="banner_id" value="<?php echo (!empty($result->uniq))?$result->uniq:random_string('alnum',10) ?>">
                                               <input name="image" class="ipimg" type="hidden" value="">
 
                                             

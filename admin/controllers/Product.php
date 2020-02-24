@@ -104,6 +104,7 @@ class Product extends CI_Controller {
 		        $config1['height'] = 120;
 		        $config1['width'] = 120;
 		        $this->load->library('image_lib', $config1);
+		        $this->image_lib->initialize($config1);
 		        $this->image_lib->resize();
 		        $file_name  = $upload_data['file_name'];
 

@@ -94,18 +94,6 @@
 												<span class="sale"><?php echo (!empty($value->selling_price))?$value->selling_price:''; ?></span>
 											</div>
 										</div><!-- /.box-content -->
-										<div class="box-bottom">
-											<div class="compare-wishlist">
-												<a href="#" class="wishlist" title="">
-													<img src="<?php echo base_url()?>assets/images/icons/wishlist.png" alt="">Wishlist
-												</a>
-											</div>
-											<div class="btn-add-cart">
-												<a href="#" title="">
-													<img src="<?php echo base_url()?>assets/images/icons/add-cart.png" alt="">Add to Cart
-												</a>
-											</div>
-										</div>
 									</div>
 								</div>
 								<div class="divider60"></div>
