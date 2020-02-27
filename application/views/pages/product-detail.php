@@ -75,16 +75,23 @@
                                 </div>
                             </div><!-- /.content-detail -->
                             <div class="footer-detail">
+                                <form action="<?php echo base_url('add-cart/') . $product->pr_id ?>" method="post" id="form-carts">
                                 <div class="quanlity-box">
                                     <div class="quanlity">
                                         <span class="btn-down"></span>
-                                        <input type="number" name="number" value="" min="1" max="100" placeholder="Quanlity">
+                                        <input type="number" name="qty" min="50" value="50"  id="qty" max="1000"
+                                                placeholder="Quantity">
                                         <span class="btn-up"></span>
                                     </div>
+                                    <p id="qtyerror"></p>
                                 </div><!-- /.quanlity-box -->
                                 <div class="box-cart style2">
                                     <div class="btn-add-cart">
-                                        <a href="#" title=""><img src="<?php echo base_url()?>assets/images/icons/add-cart.png" alt="">Add to Cart</a>
+
+                                         <button class="add-cart"
+                                                type="<?php echo ($product->is_stock > 0) ? 'disabled' : 'disabled' ?>"><img
+                                                    src="<?php echo base_url() ?>assets/images/icons/add-cart.png"
+                                                    alt="">Add to Cart</button>
                                     </div>
                                     <div class="compare-wishlist">
                                         <a href="compare.html" class="wishlist" title=""><img src="<?php echo base_url()?>assets/images/icons/wishlist.png" alt="">Wishlist</a>
@@ -214,7 +221,7 @@
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/waypoints.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/jquery.circlechart.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/easing.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/javascript/jquery.zoom.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/jquery.zoom.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/owl.carousel.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/smoothscroll.js"></script>
@@ -227,6 +234,40 @@
 
         <script type="text/javascript" src="<?php echo base_url()?>assets/javascript/main.js"></script>
         <?php $this->load->view('includes/searchq'); ?>
+
+        <script>
+            $(document).ready(function() {
+
+                $(document).on('submit','#form-carts',function(e){
+                    var quantity = $('input[name=qty]').val();
+
+                    if(quantity < 50){
+                        e.preventDefault();
+                        $('#qtyerror').append('<span style="color:red">Please Select the quantity greater than 50</span>');
+                    }else{
+                        $('#qtyerror > span').remove();
+                        $('#form-carts').submit();
+                    }
+                })
+
+
+
+                $('.btn-down').click(function(e) {
+                    e.preventDefault();
+                    var qty = $('#qty').val();
+                    if (qty > 1) {
+                        var newqty = qty -= 1;
+                        $('#qty').val(newqty);
+                    }
+                });
+                $('.btn-up').click(function(e) {
+                    e.preventDefault();
+                    var qty = $('#qty').val();
+                    var newqty = parseInt(qty) + parseInt(1);
+                    $('#qty').val(newqty);
+                });
+            });
+        </script>
 
 </body> 
 </html>

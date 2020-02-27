@@ -213,8 +213,6 @@
 	   	<script src="<?php echo base_url()?>assets/javascript/gmap3.min.js"></script>
 	   	<script  src="<?php echo base_url()?>assets/javascript/waves.min.js"></script>
 		<script src="<?php echo base_url()?>assets/javascript/main.js"></script>
-
-	</body>
-
-<?php $this->load->view('includes/searchq'); ?>
+		<?php $this->load->view('includes/searchq'); ?>
+</body>
 </html>	

@@ -54,12 +54,34 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //home page
-$route['home'] = 'home/index';
-
+$route['home'] 					= 'home/index';
 // page
 $route['search-sg']             = 'search/index';
 $route['search/(:any)']         = 'search/search/$1';
 $route['search']                = 'search/search';
 $route['product/(:any)']        = 'search/product_detail/$1';
 $route['category/(:any)']       =  'search/category/$1';
+//user authentication
+$route['register']             	= 'auth/index';
+$route['register/submit']     	= 'auth/register_insert';
+$route['email-verification']    = 'auth/email_verification';
+$route['login']     			= 'auth/login';
+$route['login/validate']     	= 'auth/check_login';
+$route['logout']     			= 'auth/logout';
+// account
+$route['profile']       		= 'account';
+$route['change-psw']            = 'account/change_psw';
+//cart
+$route['add-cart/(:any)']       = 'cart/index/$1';
+$route['get-cart']              = 'cart/get_cart';
+$route['delete-cart/(:any)']    = 'cart/deleteCart/$1';
+$route['cart']                  = 'cart/cartitem';
+$route['update-qty']            = 'cart/update_qty';
+$route['checkout']              = 'cart/checkout';
+$route['save-shipping']         = 'cart/save_shipping'; 
+$route['shipping-change']       = 'cart/shipping_change';
+$route['place-order']           = 'cart/place_order'; 
+$route['change-brand']          = 'cart/change_brand';
+
+
 

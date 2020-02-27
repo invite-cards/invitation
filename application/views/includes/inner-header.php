@@ -4,7 +4,7 @@
                     <div class="row">
                             <div class="grid-left">
                                 <div id="logo" class="logo">
-                                    <a href="index.html" title="">
+                                    <a href="<?php echo base_url()?>" title="">
                                         <img src="<?php echo base_url()?>assets/images/logos/logo.png" alt="">
                                     </a>
                                 </div><!-- /#logo -->
@@ -17,14 +17,24 @@
                                     <div id="mainnav" class="mainnav style2">
                                         <ul class="menu">
                                         <li class="column-1">
-                                            <a href="index.html" title="">Home</a>
+                                            <a href="<?php echo base_url()?>" title="">Home</a>
                                         </li>
-                                        <li class="column-1">
-                                            <a href="index.html" title="">Login</a>
-                                        </li>
-                                        <li class="column-1">
-                                            <a href="index.html" title="">Register</a>
-                                        </li>
+                                        <?php if($this->session->userdata('inuid') == ''){ ?>
+                                            <li class="column-1">
+                                                <a href="<?php echo base_url('login')?>" title="">Login</a>
+                                            </li>
+                                            <li class="column-1">
+                                                <a href="<?php echo base_url('register')?>" title="">Register</a>
+                                            </li>
+                                        <?php }else{ ?>
+                                            <li class="column-1">
+                                                <a href="<?php echo base_url('account')?>" title="">
+                                                    <div class="user-img">
+                                                        <img src="<?php echo base_url()?>assets/images/user.png" alt="">
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
                                     </ul><!-- /.menu -->
                                     </div><!-- /.mainnav -->
                                 </div><!-- /.nav-wrap -->

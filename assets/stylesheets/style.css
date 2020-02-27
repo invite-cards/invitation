@@ -325,7 +325,7 @@ input[type="email"] {
 	padding:8px 14px;
 	color:#555555;
 	border:1px solid #e5e5e5;
-	margin-bottom:20px;
+	margin-bottom:0px;
 }
 
 textarea:focus,
@@ -414,6 +414,18 @@ input[type="color"],
 	color:#727272;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
 select::-ms-expand {
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter:alpha(opacity=0);
@@ -472,8 +484,11 @@ h4 {
 	text-decoration:line-through;
 }
 
-.background {
+/*.background {
 	background-color:#fff;
+}*/
+.background {
+    background-color: #f5f5f5; 
 }
 
 /* Boxed
@@ -3366,4 +3381,17 @@ ol.comment-list li.comment .comment-text .comment-content p {
 }
 .cart-items.no-result{
 	padding-bottom: 50px;
+}
+label.error{
+	color: red !important;
+}
+.secs-top {
+    padding-top: 60px;
+}
+.user-img {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    position: relative;
+    top: 15px;
 }

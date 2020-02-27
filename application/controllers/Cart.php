@@ -8,13 +8,12 @@ class Cart extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('sid') == ''){ redirect('login','refresh'); }
+        if($this->session->userdata('inuid') == ''){ redirect('login','refresh'); }
         $this->load->model('m_cart');
-        $this->uid = $this->session->userdata('sid');
+        $this->uid = $this->session->userdata('inuid');
         $this->load->model('m_cart');
-        $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('sid'));
-        $this->load->model('m_web');
-        $this->data['categories'] = $this->m_web->categories();
+        $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
+        // $this->data['categories'] = $this->m_web->categories();
     }
 
     public function index($pid = null)
@@ -24,48 +23,10 @@ class Cart extends CI_Controller {
         $data['title'] = 'Cart';
 
         $qty = $this->input->post('qty');
-        $brand = $this->input->post('brand');
-        $size = $this->input->post('size');
-        
-        if (empty($qty)) { $qty = 1; }
-        $datas = array('qty' => $qty,'product' => $pid, 'size' => $size);
+        if (empty($qty)) { $qty = 50; }
+        $datas = array('qty' => $qty,'product' => $pid,'status'=>1);
         $data['cartid'] = $this->m_cart->addTocart($datas, $this->uid);
-
-        if (empty($brand[0])) { 
-            $brand = ''; 
-            $this->m_cart->deletebrand($brand,$data['cartid']);
-        }else{
-            $this->cart_branding($brand,$data['cartid']);
-        }
-
-        
-        // $data['cart'] = $this->m_cart->getCart($this->uid);
         $this->load->view('pages/cart', $data, FALSE);
-    }
-
-    // insert branding charges 
-    public function cart_branding($brand = '',$cartid= null)
-    {
-        for ($i=0; $i < count($brand) ; $i++) { 
-            $brand[$i] = $this->m_cart->getbrand($brand[$i]);
-        }
-
-        foreach ($brand as $key => $value) {
-            foreach ($value as $key1 => $value1) {
-                $barndDta[] = $value1;
-                $insert = array(
-                    'cart_id' => $cartid, 
-                    'brand_title' => $value1->title, 
-                    'brand_price' => $value1->price, 
-                    'brand_id' => $value1->id, 
-                );
-
-                $brandcr['id'][] = $insert['brand_id'];
-
-                $this->m_cart->addcartbrand($insert,$cartid);
-            }
-        }
-            $this->m_cart->deletebrand($brandcr['id'],$cartid);
     }
 
     // ajax shoping cart
@@ -73,8 +34,6 @@ class Cart extends CI_Controller {
     {
         $items = ''; $cout = 0; $total = 0;
         $cart = $this->m_cart->getCart($this->uid);
-
-        
        
         if(!empty($cart)){
             foreach ($cart as $key => $value) {
@@ -84,22 +43,14 @@ class Cart extends CI_Controller {
                 $brprice='';
                 $dprice='';
                 $brcgprice='';
-            $brprice = $this->m_cart->brandpriceFect($value->cid);
-                    if(!empty($brprice)){
-                    $nselect .= '<div class="brand-charge"> <div class="footer-detail c-category"><p style="color:black">Branding Charges <p><ul>';
-                        foreach ($brprice as $keys => $values) {
-                            $brndprice[] = $values->brand_price;
-                            $nselect .= '<li>'.$values->brand_title.'&nbsp;&nbsp; &#8377;'.$values->brand_price.' </li>';
-                            }
-                                            $brcgprice = array_sum($brndprice);
-                    $nselect .=   '</ul> </div> </div>';
-                }else{
-                    $nselect .= '';
-                }
-            $discount =  ($value->price * $value->pdiscount) / 100 ;//discount 
+            
+            $discount =  ($value->price * $value->pdiscount) / 100 ;//discount
             $pricedsc =  $value->price - $discount; // price after subtract discount
-            $gst =  (($pricedsc + $brcgprice)* $value->pgst) / 100 ; //gst
-            $amount =  ($pricedsc * $value->qty) + ($value->qty * $brcgprice ) + ($gst * $value->qty);//total amount
+
+            // $gst =  (($pricedsc + $brcgprice)* $value->pgst) / 100 ; //gst
+            // $amount =  ($pricedsc * $value->qty) + ($value->qty * $brcgprice ) + ($gst * $value->qty);//total amount
+
+            $amount =  ($pricedsc * $value->quantity);//total amount
             $total = $total + $amount;
                 $items .= '<div class="cart-items">
                 <div class="cart-item" dataid="'.$value->cid.'">
@@ -108,15 +59,15 @@ class Cart extends CI_Controller {
                         <div class="col-8">
                             <div class="cart-item-content">
                                 <div class="c-title">
-                                    <span><a href="'.base_url("product/").$value->product_id.'">'. $value->ptitle .'</a></span>
+                                    <span><a href="'.base_url("product/").$value->pr_id.'">'. $value->ptitle .'</a></span>
                                     
                                 </div>
                                 <div class="c-category">
                                     <p>'. $value->name .'</p>
-                                    <p><span>SKU </span> '. $value->product_id .'</p>';
-                                        if(!empty($value->pgst)){ 
-                                            $items .= '<p><span>GST </span> '. $value->pgst .'% &nbsp;-&nbsp; &#8377; '.$gst.'</p>';
-                                        }
+                                    <p><span>SKU </span> '. $value->sku .'</p>';
+                                        // if(!empty($value->pgst)){ 
+                                        //     $items .= '<p><span>GST </span> '. $value->pgst .'% &nbsp;-&nbsp; &#8377; '.$gst.'</p>';
+                                        // }
                                         if(!empty($value->pdiscount)){ 
                                             $items .= '<p><span>Discount </span> '. $value->pdiscount .'% &nbsp;-&nbsp; &#8377; '.$discount.' </p>';
                                         }
@@ -145,7 +96,7 @@ class Cart extends CI_Controller {
                                 <div class="quanlity">
                                     <span class="btn-down"></span>
                                     <input type="number" class="qtyi" name="number"
-                                        value="'. $value->qty .'" min="1" max="100"
+                                        value="'. $value->quantity .'" min="1" max="100"
                                         placeholder="Quanlity">
                                     <span class="btn-up"></span>
                                 </div>

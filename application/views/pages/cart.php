@@ -8,7 +8,7 @@
     <!-- Basic Page Needs -->
     <meta charset="UTF-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Gifting Express | cart</title>
+    <title>Invitation</title>
 
     <meta name="author" content="CreativeLayers">
 
@@ -33,7 +33,7 @@
 
         <div class="overlay"></div>
 
-        <?php $this->load->view('includes/header');?>
+        <?php $this->load->view('includes/inner-header');?>
 
         <section class="flat-shop-cart  ptb-50">
             <div class="loderbox">

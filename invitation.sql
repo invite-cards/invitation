@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2020 at 08:52 PM
+-- Generation Time: Feb 27, 2020 at 09:30 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -76,6 +76,29 @@ INSERT INTO `banner` (`id`, `image`, `link`, `uniq`, `status`, `date`) VALUES
 (14, 'banner/f261131ca613ae6336532f8f0e52f0a4.jpg', 'http://localhost/invitation/', 'cgkPmQ3A0Y', 1, '2020-02-24 19:08:31'),
 (17, 'banner/5d15718ba3dc619b2b74013802c08de8.png', 'http://localhost/invitation/', '16', 1, '2020-02-24 19:10:56'),
 (18, 'banner/119fd0442187c4a1a6c814242599c67a.png', 'http://localhost/invitation/', 'rdpeRCI6Qi', 1, '2020-02-24 19:13:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(250) NOT NULL,
+  `user` int(11) NOT NULL,
+  `pr_id` bigint(250) NOT NULL,
+  `uniq` varchar(250) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
+  `quantity` bigint(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user`, `pr_id`, `uniq`, `status`, `created_on`, `quantity`) VALUES
+(1, 6, 9, '', 0, '2020-02-27 20:18:56', 50);
 
 -- --------------------------------------------------------
 
@@ -250,6 +273,30 @@ INSERT INTO `sub_category` (`id`, `cat_id`, `title`, `date`, `status`, `uniq`) V
 (15, 10, '20', '2020-02-24 19:19:38', 1, NULL),
 (16, 10, '30', '2020-02-24 19:19:45', 1, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(250) NOT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0=inactive,1=active,2=registered but not activated,3=blocked',
+  `refid` varchar(250) NOT NULL,
+  `phone` bigint(10) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `password`, `status`, `refid`, `phone`, `date`) VALUES
+(6, 'prathwi', 'prathwiek123@gmail.com', '\r\n$2y$12$kA1vtZvhQlOqO9sOKTBHief8R4idrKHAJL0U9xr0AfymD2cyJv212', 1, 'FrdfwSyONWLza6H2CQ5cJmxi7Y38M4pTuesjIvA9BZ0DKgthUX', 9876543210, '2020-02-25 20:09:32');
+
 --
 -- Indexes for dumped tables
 --
@@ -264,6 +311,12 @@ ALTER TABLE `admin`
 -- Indexes for table `banner`
 --
 ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -291,6 +344,12 @@ ALTER TABLE `sub_category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -305,6 +364,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -329,6 +394,12 @@ ALTER TABLE `product_imgs`
 --
 ALTER TABLE `sub_category`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

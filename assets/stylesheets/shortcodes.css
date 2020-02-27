@@ -4665,7 +4665,7 @@ input[type="checkbox"]:checked+label:before {
     display: inline-block;
 }
 
-.box-cart.style2 .btn-add-cart a {
+.box-cart.style2 .btn-add-cart a,.box-cart.style2 .btn-add-cart button {
     display: inline-block;
     height: 55px;
     line-height: 55px;
@@ -4678,11 +4678,11 @@ input[type="checkbox"]:checked+label:before {
     font-weight: 600;
 }
 
-.box-cart.style2 .btn-add-cart a:hover {
+.box-cart.style2 .btn-add-cart a:hover,.box-cart.style2 .btn-add-cart button:hover {
     background-color: #2d2d2d;
 }
 
-.box-cart.style2 .btn-add-cart a img {
+.box-cart.style2 .btn-add-cart a img,.box-cart.style2 .btn-add-cart button img{
     padding-right: 18px;
 }
 
@@ -4862,7 +4862,7 @@ input[type="checkbox"]:checked+label:before {
 
 .product-detail.style4 .footer-detail .quanlity-box>div.colors select,
 .product-detail.style4 .footer-detail .quanlity-box>div.quanlity input {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 
@@ -6175,7 +6175,7 @@ table.product thead tr th:last-child {
     border-radius: 8px;
     box-shadow: 0px 2px 3px 0px rgba(234, 234, 234, 1);
     padding: 44px 50px 50px 50px;
-    height: 512px;
+    height: auto;
 }
 
 .form-register {
@@ -6185,11 +6185,11 @@ table.product thead tr th:last-child {
 .form-login .title,
 .form-register .title {
     text-align: center;
-    margin-bottom: 97px;
+    margin-bottom: 30px;
 }
 
 .form-register .title {
-    margin-bottom: 88px;
+    margin-bottom: 30px;
     padding-right: 8px;
 }
 
