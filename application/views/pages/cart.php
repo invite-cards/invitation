@@ -33,7 +33,7 @@
 
         <div class="overlay"></div>
 
-        <?php $this->load->view('includes/inner-header');?>
+        <?php $this->load->view('includes/header'); ?>
 
         <section class="flat-shop-cart  ptb-50">
             <div class="loderbox">
@@ -52,8 +52,6 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-
-
                         <div id="cart-box">
                             <div class="text-center">
                                 <div class="spinner">
@@ -62,8 +60,7 @@
                                 </div>
                             </div>
                         </div>
-
-                    </div><!-- /.col-lg-8 -->
+                    </div>
                     <div class="col-lg-4">
                         <div class="cart-totals ">
                             <h3 style="border-bottom: 1px dotted gray; padding-bottom: 15px;">Price including GST</h3>
@@ -141,6 +138,13 @@
                 $('.loderbox').css('display', 'none');
             }
         }
+
+        $(document).ready(function() {
+
+
+         
+
+
 
 
         // cart page
@@ -244,6 +248,8 @@
                     cartCout();
                 }
             });
+        });
+
         });
 
     });

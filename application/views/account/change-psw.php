@@ -16,15 +16,20 @@
 <body class="header_sticky background">
     <div class="boxed">
 
-        <?php  $this->load->view('includes/inner-header');?>
+        <?php $this->load->view('includes/header'); ?>
 
       
 
-        <main id="account-settings">
+        <main id="account-settings" class="secs-top sec-bot">
             <div class="container">
                 <div class="row">
-                   <div class="col-lg-6 col-md-8" style="margin: auto;">
-                        <div class="secs-top">
+                    <div class="col-lg-3 col-md-4">
+                        <?php $this->load->view('includes/ds_sidebar'); ?>
+                        <!-- /.sidebar -->
+                    </div><!-- /.col-lg-3 col-md-4 -->
+
+                   <div class="col-lg-9 col-md-8">
+                        <div class="">
                             <div class="form-register">
                                 <div class="col-md-12 col-lg-12">
                                 <div class="widget-title mb-30">

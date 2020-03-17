@@ -66,45 +66,44 @@ class M_cart extends CI_Model
     }
 
     //delete cart
-    // public function deletecart($pid, $eid)
-    // {
-
-    //     $this->db->where('id', $pid)->where('emp_id', $eid)->delete('cart');
-    //     if ($this->db->affected_rows() > 0) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
+    public function deletecart($pid, $eid)
+    {
+        $this->db->where('id', $pid)->where('user', $eid)->delete('cart');
+        if ($this->db->affected_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     //  update qty
-    // public function setQty($cid, $data, $uid)
-    // {
-    //     $this->db->where('id', $cid)
-    //         ->where('emp_id', $uid)
-    //         ->update('cart', $data);
-    //     return true;
+    public function setQty($cid, $data, $uid)
+    {
+        $this->db->where('id', $cid)
+            ->where('user', $uid)
+            ->update('cart', $data);
+        return true;
 
-    // }
+    }
 
-    // public function insertOrder($data)
-    // {
-    //     $this->db->insert('orders', $data);
-    //     $this->protectedQty($data);
-    //     $this->deleteCartitem();
-    //     return true;
+    public function insertOrder($data)
+    {
+        $this->db->insert('orders', $data);
+        $this->protectedQty($data);
+        $this->deleteCartitem();
+        return true;
 
-    // }
+    }
 
     // decreez product qty
-    // public function protectedQty($data)
-    // {
-    //     $this->db->where('id', $data['product'])
-    //         ->set('available_stock', 'available_stock-' . $data['qty'], false)
-    //         ->update('product');
-    //     return true;
+    public function protectedQty($data)
+    {
+        $this->db->where('id', $data['product'])
+            ->set('available_stock', 'available_stock-' . $data['qty'], false)
+            ->update('product');
+        return true;
 
-    // }
+    }
 
     // delete cart items
     public function deleteCartitem()
@@ -116,48 +115,48 @@ class M_cart extends CI_Model
 
 
     // save shipping address
-    // public function saveShipping($data, $uid)
-    // {
-    //     $this->db->where('employee', $uid);
-    //     $this->db->update('shipping_address', array('status' => 0));
-    //     $this->db->group_start();
-    //     $this->db->insert('shipping_address', $data);
-    //     $this->db->group_end();
-    //     return true;
+    public function saveShipping($data, $uid)
+    {
+        $this->db->where('employee', $uid);
+        $this->db->update('shipping_address', array('status' => 0));
+        $this->db->group_start();
+        $this->db->insert('shipping_address', $data);
+        $this->db->group_end();
+        return true;
 
-    // }
+    }
 
-    // // get shipping addres  detail
-    // public function getShipping($id = null)
-    // {
-    //     $this->db->where('employee', $id)->order_by('status', 'DESC');
-    //     return $this->db->get('shipping_address')->result();
-    // }
+    // get shipping addres  detail
+    public function getShipping($id = null)
+    {
+        $this->db->where('employee', $id)->order_by('status', 'DESC');
+        return $this->db->get('shipping_address')->result();
+    }
 
     // get billing addres  detail
-    // public function getBilling($id = null)
-    // {
-    //     $this->db->order_by('id', 'DESC');
-    //     return $this->db->get('billing_address')->result();
-    // }
+    public function getBilling($id = null)
+    {
+        $this->db->order_by('id', 'DESC');
+        return $this->db->get('billing_address')->result();
+    }
 
     // change address default
-    // public function cahnge_address($sid, $uid)
-    // // {
+    public function cahnge_address($sid, $uid)
+    {
 
-    // //     $this->db->where('employee', $uid);
-    // //     $this->db->update('shipping_address', array('status' => 0));
-    // //     $this->cahnge_address_update($sid, $uid);
-    // //     return true;
-    // // }
+        $this->db->where('employee', $uid);
+        $this->db->update('shipping_address', array('status' => 0));
+        $this->cahnge_address_update($sid, $uid);
+        return true;
+    }
 
-    // public function cahnge_address_update($sid, $uid)
-    // {
-    //     $this->db->where('employee', $uid);
-    //     $this->db->where('id', $sid);
-    //     $this->db->update('shipping_address', array('status' => 1));
-    //     return true;
-    // }
+    public function cahnge_address_update($sid, $uid)
+    {
+        $this->db->where('employee', $uid);
+        $this->db->where('id', $sid);
+        $this->db->update('shipping_address', array('status' => 1));
+        return true;
+    }
 
     // Get default shipping address
     // public function getdefaultShipping($uid = null)
@@ -186,16 +185,6 @@ class M_cart extends CI_Model
         //     $query = $this->db->where('id', $cid)->get('employee')->row();
         //     return $query->email;
         // }
-
-    
-
-    
-
-    public function brandpriceFect($id = null)
-    {
-        $this->db->where('cart_id', $id);
-        return $this->db->get('cart_branding')->result();
-    }
 
     public function updateBrand($id, $prd)
     {

@@ -882,7 +882,7 @@ ul.flat-unstyled li > ul > li > a {
 }
 
 .top-search form.form-search .box-search input {
-	padding-left:191px;
+	padding-left: 50px;
 	padding-top:11px;
 	height:49px;
 }
@@ -1422,6 +1422,7 @@ ul.flat-unstyled li > ul > li > a {
 }
 
 #mega-menu > ul.menu > li .drop-menu {
+	width: 500px !important;
 	transform:translateX(-10%);
 	opacity:0;
 	visibility:hidden;
@@ -1532,7 +1533,7 @@ ul.flat-unstyled li > ul > li > a {
 -------------------------------------------------------------- */
 #mainnav {
 	padding-left:30px;
-	float:left;
+	float:right;
 }
 
 #mainnav > ul.menu {
@@ -3388,10 +3389,40 @@ label.error{
 .secs-top {
     padding-top: 60px;
 }
-.user-img {
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    position: relative;
-    top: 15px;
+.sec-bot{
+	padding-bottom: 60px;
+
 }
+.user-img {height: 50px; width: 50px; overflow: hidden; position: relative; top: 15px; } 
+.logo img{width: 200px; height: auto; }
+.header-middle {padding: 15px; }
+.pro-bg{background-color: #fff; border-radius: 7px; box-shadow: 0px 0px 2px gray; }
+.sidebar {background-color: #fff; padding: 25px 25px; box-shadow: 0px 2px 3px 0px rgba(234, 234, 234, 1); }
+.flat-shop-cart {position: relative; } 
+.ptb-50 {padding: 15px 0; } 
+.loderbox {position: absolute; z-index: 10; width: 100%; height: 100%; top: 0; padding: 100px 0; background: #8683831c; display: none; } 
+.spinner {width: 40px; height: 40px; position: relative; margin: 50px auto; }
+.double-bounce1, .double-bounce2 {width: 100%; height: 100%; border-radius: 50%; background-color: #333; opacity: 0.6; position: absolute; top: 0; left: 0; -webkit-animation: sk-bounce 2.0s infinite ease-in-out; animation: sk-bounce 2.0s infinite ease-in-out; }
+.double-bounce2 {-webkit-animation-delay: -1.0s; animation-delay: -1.0s; }
+.flat-shop-cart .flat-row-title {margin-bottom: 15px; }
+.flat-row-title.style1 {border-bottom: none; }
+.flat-row-title h3 {color: #2d2d2d; padding: 15px 0; font-weight: 500; }
+.cart-items {padding: 30px; border-radius: 8px; background-color: #fff; margin-bottom: 10px; box-shadow: 1px 1px 5px #8080801a; position: relative; }
+.remove-btn {z-index: 9; position: absolute; right: 10px; top: 10px; text-align: center; border-radius: 50%; width: 45px; height: 45px; font-size: 9px; color: #959595; }
+.remove-btn span {display: block; margin-top: -9px; }
+.cart-item-image.img {min-height: 150px; max-height: 150px; overflow: hidden; margin-right: 100px; }
+.cart-totals {padding: 35px 40px 46px 41px; border-radius: 8px; background-color: #fff; box-shadow: 1px 1px 5px #8080801a; }
+.cart-totals h3 {font-size: 18px; font-family: 'Open Sans'; font-weight: bold; color: #484848; margin-bottom: 26px; }
+.cart-totals table {width: 100%; }
+.mt-50 {margin-top: 50px; }
+.cart-totals form .btn-cart-totals {margin-top: 45px; padding: 0 5px; }
+button.checkout {background-color: #f92400; position: relative; overflow: hidden; z-index: 5; }
+button.checkout::before {content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: #009999; z-index: -1; -webkit-transform: scaleX(0); transform: scaleX(0); -webkit-transform-origin: 0 50%; transform-origin: 0 50%; -webkit-transition-property: transform; transition-property: transform; -webkit-transition-duration: 0.4s; transition-duration: 0.4s; -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out; }
+.cart-item-image .quanlity {position: relative; max-width: 150px; }
+.cart-item-image .btn-down {position: absolute; width: 20px; height: 20px; background: transparent; top: 7px; left: 14px; z-index: 3; cursor: pointer; }
+.cart-item-image .btn-down::after {content: ''; position: absolute; width: 15px; height: 2px; background: #484848; top: 11px; left: 0px; z-index: 2; }
+.cart-item-image input[type="number"] {margin-top: 14px; padding: 0 13px; line-height: 0; background-color: #fff; text-align: center; box-shadow: 0px 0px 9px -3px rgb(234, 234, 234); height: 37px; max-width: 150px; border: 1px solid #d5d5d5; }
+.cart-item-image input, .cart-item-image input:focus {border: transparent; max-height: 35px; }
+.cart-item-image .btn-up {position: absolute; width: 20px; height: 20px; background: white; top: 7px; right: 14px; z-index: 3; cursor: pointer; }
+.cart-item-image .btn-up::before {content: ''; position: absolute; width: 2px; height: 15px; background: #484848; top: 3px; right: 6.5px; z-index: 2; }
+.cart-item-image .btn-up::after {content: ''; position: absolute; width: 15px; height: 2px; background: #484848; top: 10px; right: 0px; z-index: 2; }

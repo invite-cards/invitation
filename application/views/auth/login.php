@@ -16,15 +16,16 @@
 		<div class="overlay"></div>
 
 		<!-- Preloader -->
-		<div class="preloader">
+		<!-- <div class="preloader">
 			<div class="clear-loading loading-effect-2">
 				<span></span>
 			</div>
-		</div><!-- /.preloader -->
+		</div> -->
+		<!-- /.preloader -->
 
 		
 
-		<?php $this->load->view('includes/inner-header'); ?>
+		<?php $this->load->view('includes/header'); ?>
 
 
 		<section class="flat-account background">

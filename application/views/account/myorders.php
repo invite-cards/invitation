@@ -26,11 +26,11 @@
 <body class="header_sticky background">
     <div class="boxed">
 
-        <?php  $this->load->view('includes/header');?>
+        <?php $this->load->view('includes/header'); ?>
 
 
 
-        <main id="account-settings">
+        <main id="account-settings" class="secs-top sec-bot">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4">

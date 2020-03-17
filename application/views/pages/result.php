@@ -15,7 +15,7 @@
 
         <div class="overlay"></div>
 
-        <?php $this->load->view('includes/inner-header'); ?>
+        <?php $this->load->view('includes/header'); ?>
 
         <?php $this->load->view('includes/filter'); ?>
 
@@ -31,7 +31,7 @@
                                 <div class="row mob-plr5">
                                     <?php foreach ($result as $key => $value_prd) { ?>
                                     <div class="col-lg-3 col-6 mob-2">
-                                        <div class="product-box">
+                                        <div class="product-box pro-bg">
                                             <div class="imagebox style2">
                                                 <!-- <span class="item-new">NEW</span> -->
                                                 <div class="box-image">

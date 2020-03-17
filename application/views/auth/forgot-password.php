@@ -23,7 +23,7 @@
 
 		
 
-		<?php $this->load->view('includes/inner-header'); ?>
+		<?php $this->load->view('includes/header'); ?>
 
 
 		<section class="flat-account background">

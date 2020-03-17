@@ -846,10 +846,10 @@
 	.flexslider.style2 .flex-control-nav {
 		right:auto;left:0;width:20%;
 	}
-
+/*
 	.slider .slider-item .item-image {
 		display:none;
-	}
+	}*/
 
 	.slider .slider-item.style4 .item-text {
 		padding:80px 48px;width:100%;
@@ -1009,6 +1009,15 @@
 	ul.flat-support {
 		text-align:center;
 	}
+
+	.header-bottom {
+    height: 50px;
+}
+
+.slider-item {
+    height: 160px;
+    overflow: hidden;
+}
 
 	.header-middle #logo {
 		text-align:center;line-height:60px;margin:0px;

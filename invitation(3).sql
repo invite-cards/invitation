@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2020 at 09:30 PM
+-- Generation Time: Mar 17, 2020 at 05:25 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -51,7 +51,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `email`, `phone`, `password`, `is_active`, `admin_type`, `forgot_link`, `reference_d`, `created_date`, `updated_date`, `manager`, `menu`, `added_by`, `discount`) VALUES
-(1, 'admin', 'prathwiek123@gmail.com', 8951411732, '$2a$08$80rA2jLtMdi2/Q1e1BrE.eDiJnWSwmZUdQa.812CuV8aS4GAsFCZC', 1, 1, 'gGqAObTrFYzlxXU0', '123456789', '2019-08-06 13:28:31', '2020-01-24 01:35:12', NULL, NULL, NULL, NULL);
+(1, 'admin', 'prathwiek123@gmail.com', 8951411732, '123456', 1, 1, 'gGqAObTrFYzlxXU0', '123456789', '2019-08-06 13:28:31', '2020-01-24 01:35:12', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -76,6 +76,31 @@ INSERT INTO `banner` (`id`, `image`, `link`, `uniq`, `status`, `date`) VALUES
 (14, 'banner/f261131ca613ae6336532f8f0e52f0a4.jpg', 'http://localhost/invitation/', 'cgkPmQ3A0Y', 1, '2020-02-24 19:08:31'),
 (17, 'banner/5d15718ba3dc619b2b74013802c08de8.png', 'http://localhost/invitation/', '16', 1, '2020-02-24 19:10:56'),
 (18, 'banner/119fd0442187c4a1a6c814242599c67a.png', 'http://localhost/invitation/', 'rdpeRCI6Qi', 1, '2020-02-24 19:13:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `billing_address`
+--
+
+CREATE TABLE `billing_address` (
+  `id` int(11) NOT NULL,
+  `street` varchar(200) DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
+  `religion` varchar(200) DEFAULT NULL,
+  `country` varchar(200) DEFAULT NULL,
+  `company_name` varchar(250) DEFAULT NULL,
+  `gst_number` varchar(75) DEFAULT NULL,
+  `zip_code` int(10) DEFAULT NULL,
+  `uniq` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `billing_address`
+--
+
+INSERT INTO `billing_address` (`id`, `street`, `city`, `religion`, `country`, `company_name`, `gst_number`, `zip_code`, `uniq`) VALUES
+(4, '84, Hosur Road, Electronic City ', 'Bengaluru ', 'karnataka ', 'india ', 'Siemens Technology and Services Private Limited ', '1234567890 ', 560100, 'CtzM9vs403FQDr81  ');
 
 -- --------------------------------------------------------
 
@@ -239,6 +264,33 @@ INSERT INTO `product_imgs` (`id`, `prod_id`, `image`, `thumb`, `uniq`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shipping_address`
+--
+
+CREATE TABLE `shipping_address` (
+  `id` int(11) NOT NULL,
+  `employee` int(250) NOT NULL,
+  `street` varchar(200) DEFAULT NULL,
+  `street1` varchar(100) DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
+  `religion` varchar(200) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0 COMMENT '1=default address,0=not',
+  `country` varchar(200) DEFAULT NULL,
+  `phone` bigint(15) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `zip_code` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shipping_address`
+--
+
+INSERT INTO `shipping_address` (`id`, `employee`, `street`, `street1`, `city`, `religion`, `status`, `country`, `phone`, `name`, `zip_code`) VALUES
+(8, 4, 'RR nagar', '4 stage BEML layout', 'Bangalore', 'Andhra Pradesh', 0, NULL, 123456789, 'shahir', 12345);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sub_category`
 --
 
@@ -314,6 +366,12 @@ ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `billing_address`
+--
+ALTER TABLE `billing_address`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
@@ -335,6 +393,12 @@ ALTER TABLE `product`
 -- Indexes for table `product_imgs`
 --
 ALTER TABLE `product_imgs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `shipping_address`
+--
+ALTER TABLE `shipping_address`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -366,10 +430,16 @@ ALTER TABLE `banner`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT for table `billing_address`
+--
+ALTER TABLE `billing_address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -388,6 +458,12 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_imgs`
   MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `shipping_address`
+--
+ALTER TABLE `shipping_address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `sub_category`

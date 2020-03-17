@@ -10,6 +10,7 @@ class Cart extends CI_Controller {
         parent::__construct();
         if($this->session->userdata('inuid') == ''){ redirect('login','refresh'); }
         $this->load->model('m_cart');
+        $this->load->library('form_validation');
         $this->uid = $this->session->userdata('inuid');
         $this->load->model('m_cart');
         $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
@@ -18,10 +19,8 @@ class Cart extends CI_Controller {
 
     public function index($pid = null)
     {
- 
         $data['breadcrumbs'] = FALSE;
         $data['title'] = 'Cart';
-
         $qty = $this->input->post('qty');
         if (empty($qty)) { $qty = 50; }
         $datas = array('qty' => $qty,'product' => $pid,'status'=>1);
@@ -82,15 +81,13 @@ class Cart extends CI_Controller {
                         </div>
 
                         <div class="col-4">
-                            <div class="cart-item-image">
+                            <div class="cart-item-image img">
                                 <img src="'.base_url().$value->image_path .'" class="" alt="">
 
                             </div>
                         </div>
 
-                        <div class="col-6 col-sm-8">
-                            '.$nselect.'
-                        </div>
+                        
                         <div class="col-6 col-sm-4">
                             <div class="cart-item-image">
                                 <div class="quanlity">
@@ -143,7 +140,7 @@ class Cart extends CI_Controller {
     {
        $cid = $this->input->post('id');
        $qty = $this->input->post('qty');
-       $data = array('qty' =>$qty);
+       $data = array('quantity' =>$qty);
        $this->m_cart->setQty($cid, $data, $this->uid);
     }
 

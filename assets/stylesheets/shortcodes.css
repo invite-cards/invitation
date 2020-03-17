@@ -350,6 +350,7 @@
 
 .product-box.style1 .imagebox.style1 {
     min-height: 240px;
+    border: 1px solid #e5e5e5;
 }
 
 .product-box.style1:hover {
@@ -401,7 +402,7 @@
 .product-box.style1.v1 {
     border: none;
     margin-bottom: 39px;
-    height: 200px;
+    height: 250px;
 }
 
 .product-box.style1.v1:hover .imagebox {
@@ -474,6 +475,9 @@
     margin-bottom: 5px;
     line-height: 209px;
     height: 209px;
+    min-height: 200px;
+    max-height: 200px;
+    overflow: hidden;
 }
 
 .imagebox .box-image a {
@@ -1675,9 +1679,12 @@
 
 .imagebox.style4 .box-image {
     height: 110px;
-    line-height: 108px;
-    text-align: center;
-    margin-bottom: 4px;
+line-height: 108px;
+text-align: center;
+margin-bottom: 4px;
+min-height: 100px;
+max-height: 100px;
+overflow: hidden;
 }
 
 .imagebox.style4 .box-content .cat-name a {
@@ -1694,6 +1701,7 @@
     min-height: 66px;
     margin-top: 4px;
     margin-left: 2px;
+    overflow: hidden;
 }
 
 .imagebox.style4 .box-content .product-name a {
@@ -2131,6 +2139,10 @@ ul.flat-infomation.style1 li img {
     border-radius: 8px;
 }
 
+.slider .slider-item .item-image img{
+    width: 100%;
+}
+
 .slider .slider-item .item-text {
     width: 64%;
     float: left;
@@ -2198,7 +2210,7 @@ ul.flat-infomation.style1 li img {
     padding-top: 57px;
     padding-right: 75px;
     position: relative;
-    float: right;
+    /*float: right;*/
 }
 
 .slider .slider-item:before {
@@ -2269,8 +2281,8 @@ ul.flat-infomation.style1 li img {
 }
 
 .slider .slider-item.style1 .item-image {
-    padding-top: 124px;
-    padding-right: 52px;
+    padding-top: 0;
+padding-right: 0;
 }
 
 .slider .slider-item.style1 .item-image .sale-off {

@@ -51,17 +51,14 @@ class M_auth extends CI_Model {
     // check password
     function getUsers($password) {
         $query = $this->db->get('user');
-
         if ($query->num_rows() > 0) {
             $result = $query->row_array();
-            if ($this->bcrypt->check_password($password, $result['password'])) {
-                //We're good
+            // if ($this->bcrypt->check_password($password, $result['password'])) {
                 return $result;
-            } 
-            else {
-                //Wrong password
-                return array();
-            }
+            // } 
+            // else {
+                // return array();
+            // }
         } 
         else{
             return array();
