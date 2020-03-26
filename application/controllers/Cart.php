@@ -14,7 +14,6 @@ class Cart extends CI_Controller {
         $this->uid = $this->session->userdata('inuid');
         $this->load->model('m_cart');
         $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
-        // $this->data['categories'] = $this->m_web->categories();
     }
 
     public function index($pid = null)

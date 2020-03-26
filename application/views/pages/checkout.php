@@ -11,6 +11,11 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/stylesheets/responsive.css">
     <link rel="icon" type="image/png" sizes="60x60" href="<?php echo base_url() ?>assets/favicon/favicon.png">
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .pay-qr{display: none; } 
+        .pay-ref{ display: none; }
+
+    </style>
 </head>
 <body class="header_sticky background">
     <div class="boxed">
@@ -19,7 +24,7 @@
 
         <?php $this->load->view('includes/header');?>
 
-        <section class="flat-checkout">
+        <section class="flat-checkout sec-bot sec-top">
 
             <div class="container">
                 <div class="row">
@@ -304,57 +309,33 @@
 
 
                             <div class="">
-                                <div id="addres-empty">
-                                    <a class="btn small-btn btn-link">Purchase Order</a><br>
-                                    <span class="error">Please add shipping address</span>
-                                    <input type="hidden"
-                                        value="<?php echo (!empty($shipping)) ? count($shipping) : '' ?>"
-                                        id="ship-count">
-                                </div>
+                                <div class="form-check">
+                                  <label class="form-check-label"> <input type="radio" class="form-check-input" name="optradio" checked=""> Option 1  </label>&nbsp;&nbsp;&nbsp;
+                                  <label class="form-check-label"> <input type="radio" class="form-check-input" name="optradio">  Option 2 </label> 
+                              </div>
+                                <div id="form-check">
+                                    <select class="form-control form-control-lg" id="pay-meth" required> 
+                                        <option value="">Choose Purchase method</option>
+                                        <option value="1">Pay By UPI</option>
+                                        <option value="2">Enter The Reciept Number</option>
+                                    </select>
 
-                                <div id="place-chck">
-
-                                    <?php if ($total >= 100000) {?>
-                                    <form action="<?php echo base_url() ?>place-order" method="POST"
-                                        id="place-order-more">
-                                        <a href="#" class="razorpay-payment-button" id="more-lakh">Purchase Request</a>
-                                        <input type="hidden" custom="Hidden Element" name="team" id="more-taem">
-                                        <input type="hidden" custom="Hidden Element" name="purpose" id="more-purpose">
-                                    </form>
-                                    <?php } else {?>
-
-                                    <form action="<?php echo base_url() ?>payment/success/" method="POST"
-                                        style="float:left;margin-right:10px" id="pay-form">
-                                        <script src="https://checkout.razorpay.com/v1/checkout.js"
-                                            data-key="rzp_test_ZPtHNE4hO3uWul" data-amount="<?php echo round($total).'00' ?>"
-                                            data-currency="INR" data-buttontext="Pay via Credit Card"
-                                            data-name="Gifting express" data-description="Gifting express"
-                                            data-image="<?php echo base_url() ?>assets/images/img/logo.svg"
-                                            data-prefill.name="<?php echo $user["name"] ?>"
-                                            data-prefill.email="<?php echo $user["email"] ?>"
-                                            data-prefill.contact="<?php echo $user["phone"] ?>"
-                                            data-theme.color="#009999">
-                                        </script>
-                                        <input type="hidden" custom="Hidden Element" name="hidden">
-                                        <input type="hidden" custom="Hidden Element place-taem" name="team"
-                                            id="pay-team">
-                                        <input type="hidden" custom="Hidden Element place-purpose" name="purpose"
-                                            id="pay-purpose">
-                                    </form>
-
-                                    <span style="float:left;line-height: 48px;margin-right:10px">OR</span>
-                                    <form action="<?php echo base_url() ?>place-order" method="POST"
-                                        id="place-order-less">
-                                        <a href="#" class="razorpay-payment-button" id="less-lakh" style="font-size: 12px;">Purchase Request</a>
-                                        <input type="hidden" custom="Hidden Element place-taem" name="team"
-                                            id="less-taem">
-                                        <input type="hidden" custom="Hidden Element place-purpose" name="purpose"
-                                            id="less-purpose">
-                                        <input type="hidden" class="bill-val" name="bill_val">
-                                    </form>
-                                    <?php }?>
                                 </div>
                             </div><!-- /.btn-order -->
+
+
+                            <div class="pay-qr">
+                                <img src="<?php echo base_url() ?>assets/images/QR-code.png" alt="">
+                                <form action="">
+                                    <input type="file" required="" name="qr_file">
+                                </form>
+                            </div>
+
+                            <div class="pay-ref">
+                                <form action="">
+                                    <input type="text" name="ref_no" required="" class="form-control-file" placeholder="Enter the reference number">
+                                </form>
+                            </div>
 
                         </div><!-- /.cart-totals style2 -->
                     </div><!-- /.col-md-5 -->
@@ -437,6 +418,19 @@
 
                 }
             });
+
+        });
+
+        $(document).on('change','#pay-meth',function(){
+            var id = $(this).val();
+
+            if(id == 1){
+                $('.pay-qr').css('display','block');
+                $('.pay-ref').css('display','none');
+            }else{
+                $('.pay-qr').css('display','none');
+                $('.pay-ref').css('display','block');
+            }
 
         });
     });

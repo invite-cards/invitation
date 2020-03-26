@@ -9,54 +9,63 @@
 									</a>
 								</div><!-- /#logo -->
 							</div><!-- /.col-md-3 -->
-							<div class="col-md-6">
-							<div class="top-search">
-								<form action="<?php echo base_url('search') ?>" method="get" class="form-search" accept-charset="utf-8">
-                                        <div class="box-search">
-                                            <input type="text" name="q" autocomplete="off" placeholder="Search cards here?">
-                                            <span class="btn-search">
-                                                <button type="submit"><img src="<?php echo base_url()?>assets/images/icons/search-2.png" alt=""></button>
-                                            </span>
-                                            <div class="search-suggestions">
-                                                <div class="box-suggestions">
-                                                    <div class="title">
-                                                        Search Suggestions
-                                                    </div>
-                                                    <ul class="search-result">
-                                                        
-                                                    </ul>
-                                                </div><!-- /.box-suggestions -->
+
+                            <?php if ($this->session->userdata('inuid') !='') { ?>
+                                <div class="col-md-6">
+                                <div class="top-search">
+                                    <form action="<?php echo base_url('search') ?>" method="get" class="form-search" accept-charset="utf-8">
+                                            <div class="box-search">
+                                                <input type="text" name="q" autocomplete="off" placeholder="Search cards here?">
+                                                <span class="btn-search">
+                                                    <button type="submit"><img src="<?php echo base_url()?>assets/images/icons/search-2.png" alt=""></button>
+                                                </span>
+                                                <div class="search-suggestions">
+                                                    <div class="box-suggestions">
+                                                        <div class="title">
+                                                            Search Suggestions
+                                                        </div>
+                                                        <ul class="search-result">
+                                                            
+                                                        </ul>
+                                                    </div><!-- /.box-suggestions -->
+                                                </div>
+                                                <!-- /.search-suggestions -->
+                                            </div><!-- /.box-search -->
+                                        </form><!-- /.form-search -->
+                                </div><!-- /.top-search -->
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-3">
+                                <div class="box-cart">
+                                    <div class="inner-box">
+                                        <ul class="menu-compare-wishlist">
+                                            <li class="wishlist">
+                                                <a href="wishlist.html" title="">
+                                                    <img src="<?php echo base_url()?>assets/images/icons/wishlist.png" alt="">
+                                                </a>
+                                            </li>
+                                        </ul><!-- /.menu-compare-wishlist -->
+                                    </div><!-- /.inner-box -->
+                                    <div class="inner-box">
+                                        <a href="<?php echo base_url() ?>cart" title="">
+                                            <div class="icon-cart">
+                                                <img src="<?php echo base_url()?>assets/images/icons/cart.png" alt="">
+                                                <span><?php echo (!empty($this->data['cart_item']))?$this->data['cart_item']:'';  ?></span>
                                             </div>
-                                            <!-- /.search-suggestions -->
-                                        </div><!-- /.box-search -->
-                                    </form><!-- /.form-search -->
-							</div><!-- /.top-search -->
-						</div><!-- /.col-md-6 -->
-						<div class="col-md-3">
-							<div class="box-cart">
-								<div class="inner-box">
-									<ul class="menu-compare-wishlist">
-										<li class="wishlist">
-											<a href="wishlist.html" title="">
-												<img src="<?php echo base_url()?>assets/images/icons/wishlist.png" alt="">
-											</a>
-										</li>
-									</ul><!-- /.menu-compare-wishlist -->
-								</div><!-- /.inner-box -->
-								<div class="inner-box">
-									<a href="#" title="">
-										<div class="icon-cart">
-											<img src="<?php echo base_url()?>assets/images/icons/cart.png" alt="">
-											<span>4</span>
-										</div>
-									</a>
-									
-								</div><!-- /.inner-box -->
-							</div><!-- /.box-cart -->
-						</div><!-- /.col-md-3 -->
+                                        </a>
+                                        
+                                    </div><!-- /.inner-box -->
+                                </div><!-- /.box-cart -->
+                            </div><!-- /.col-md-3 -->
+                            <?php }  ?>
+
+							
+
+
 						</div><!-- /.row -->
 					</div><!-- /.container -->
 				</div><!-- /.header-middle -->
+
+
 				<div class="header-bottom">
 					<div class="container">
 						<div class="row">

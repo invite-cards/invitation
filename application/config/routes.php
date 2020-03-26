@@ -71,6 +71,11 @@ $route['logout']     			= 'auth/logout';
 // account
 $route['profile']       		= 'account';
 $route['change-psw']            = 'account/change_psw';
+$route['shipping-address']      = 'account/shipping_address';
+$route['shipping-address-edit/(:any)'] 	= 'account/shipping_address_edit/$1';
+$route['save-shipping-update']  		= 'account/shipping_address_update';
+$route['delte-shipping/(:any)/(:any)'] 	= 'account/delte_shipping/$1/$2';
+
 //cart
 $route['add-cart/(:any)']       = 'cart/index/$1';
 $route['get-cart']              = 'cart/get_cart';

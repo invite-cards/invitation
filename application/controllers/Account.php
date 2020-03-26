@@ -11,10 +11,8 @@ class Account extends CI_Controller {
         if($this->session->userdata('inuid') == ''){ redirect('login','refresh'); }
         $this->load->model('m_account');
         $this->uid = $this->session->userdata('inuid');
-        // $this->load->model('m_cart');
-        // $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
-        // $this->load->model('m_web');
-        // $this->data['categories'] = $this->m_web->categories();
+        $this->load->model('m_cart');
+        $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
     }
     
     //  profile

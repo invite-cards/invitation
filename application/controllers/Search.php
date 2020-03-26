@@ -8,14 +8,12 @@ class Search extends CI_Controller {
     public function __construct()
         {
         parent::__construct();
-        // if($this->session->userdata('sid') == ''){ redirect('login','refresh'); }
         $this->load->model('m_search');
         $this->uid = $this->session->userdata('sid');
         $this->load->library('pagination');
         $this->load->model('m_cart');
-        // $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('sid'));
+        $this->data['cart_item'] = $this->m_cart->cart_item($this->session->userdata('inuid'));
         $this->data['categories'] = $this->m_search->categories();
-        // $this->data['brand'] = $this->m_web->brand();
     }
     
     // search suggetion
